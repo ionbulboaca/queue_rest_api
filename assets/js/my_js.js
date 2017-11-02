@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 	function Services(){
 
-		$.getJSON("http://localhost/queue_rest_api/Queue/Service.php", function(data){
+		$.getJSON(base_url + "/Queue/Service.php", function(data){
 	 		
 	 		read_services_html ="<h3><strong>Services</strong></h3>";
 
@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 	function CustomerTypes(){
 
-		$.getJSON("http://localhost/queue_rest_api/Queue/CustomerType.php", function(data){
+		$.getJSON(base_url + "/Queue/CustomerType.php", function(data){
 	 		
 	 		read_types_html =  "<div class='form-group'>";
 	 		read_types_html += "<div class='input-group-btn' data-toggle='buttons'>";
@@ -61,7 +61,7 @@ $(document).ready(function(){
 		customer_details_html = "";
 		
 		if(type == 1){
-			$.getJSON("http://localhost/queue_rest_api/Queue/CustomerTitle.php", function(data){
+			$.getJSON(base_url + "/Queue/CustomerTitle.php", function(data){
 	 			
 		 		customer_details_html += "<div class='form-group'>";
 		 		customer_details_html += "<label for='title'>Title:</label>";
@@ -115,12 +115,12 @@ $(document).ready(function(){
         var form_data=JSON.stringify($(this).serializeObject());
       
 		$.ajax({
-		    url: "http://localhost/queue_rest_api/Queue/create.php",
+		    url: base_url + "/Queue/create.php",
 		    type : "POST",
 		    contentType : 'application/json',
 		    data : form_data,
 		    success : function(result) {
-		        // product was created, go back to products list
+		       
 		       populate_queue_list()
 		    },
 		    error: function(xhr, resp, text) {
@@ -131,7 +131,7 @@ $(document).ready(function(){
 	});
 
 	function populate_queue_list(){
-		$.getJSON("http://localhost/queue_rest_api/Queue/QueueList.php", function(data){
+		$.getJSON(base_url + "/Queue/QueueList.php", function(data){
 			
 			queue_list_html = "<h3>List of customers being queued!</h3>";
 	 		queue_list_html += "<table  id='populate_table_queue_list' class='table table-bordered data-table'>";

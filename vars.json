@@ -1,0 +1,10 @@
+{
+  "app_env": "prod",
+  "app_root": "/queue_rest_api",
+  "ini_display_errors" : 1,
+  "ini_error_reporting": 1,
+  "_comments": {
+    "ini_display_errors": "in prod will be 0",
+    "ini_error_reporting": "in prod will be 0"
+  }
+}
