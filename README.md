@@ -1,4 +1,4 @@
-Developed this app using PHP and Javascript, AJAX, Bootstrap and MySql as database. I developed without any framework because like this was prefered :).
+Developed this app using PHP and Javascript, AJAX, Jquery, Bootstrap and MySql as database. I developed without any framework because like this was prefered :).
 
 Configurations:
 1) Mysql version >=5.5:
