@@ -1,5 +1,5 @@
 <?php
-class Service{
+class Service extends Api{
  
     // database connection and table name
     private $conn;
@@ -8,7 +8,7 @@ class Service{
     // object properties
     public $id;
     public $Name;
- 
+    
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;

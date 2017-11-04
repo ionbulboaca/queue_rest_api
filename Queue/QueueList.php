@@ -5,6 +5,8 @@ header("Content-Type: application/json; charset=UTF-8");
  
 // include database and object files
 include_once '../config/database.php';
+// Request status
+include_once '../config/Api.php';
 include_once '../objects/Queue.php';
  
 // instantiate database and product object

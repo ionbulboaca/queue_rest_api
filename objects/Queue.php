@@ -1,5 +1,7 @@
 <?php
-class Queue{
+//require_once '../config/Api.php';
+
+class Queue extends Api{
  
     // database connection and table name
     private $conn;
@@ -16,6 +18,13 @@ class Queue{
     public $queued_at;
  
     // constructor with $db as database connection
+    function _autoload($class_name){
+        $dir = '../config/${class_name}.php';
+        if(is_file($dir)){
+            include $dir;
+        }
+    }
+
     public function __construct($db){
         $this->conn = $db;
     }
@@ -65,6 +74,7 @@ class Queue{
      
         return $stmt;
     }
+
     // Insert Customer
     function insert(){
 
@@ -104,9 +114,9 @@ class Queue{
         
         // execute query
         if($stmt->execute()){
-            return true;
+            return $this->response(true,200);
         }else{
-           return false;
+           return $this->response(false,405);
         }
-    }
+    }  
 }

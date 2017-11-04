@@ -1,14 +1,13 @@
 <?php
-class CustomerTitle{
+class CustomerTitle extends Api{
  
     // database connection and table name
     private $conn;
     private $table_name = "customer_title";
- 
     // object properties
     public $id;
     public $Title;
- 
+
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;

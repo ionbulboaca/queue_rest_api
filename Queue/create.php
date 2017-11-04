@@ -8,8 +8,9 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
  
 // get database connection
 include_once '../config/database.php';
- 
-// instantiate product object
+// Request status
+include_once '../config/Api.php';
+// instantiate Queu object
 include_once '../objects/Queue.php';
  
 $database = new Database();
